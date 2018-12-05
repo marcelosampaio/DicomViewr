@@ -24,6 +24,7 @@ class ViewController: UIViewController
             let dicom  =   Bundle.main.path(forResource: "dicom", ofType: nil)
             
             let jsonString =  try String(contentsOfFile: dicom!)
+            print("👉 jsonString: \(jsonString)")
             
             guard let data = Mapper<DicomFile>().map(JSONString: jsonString) else { return }
             
